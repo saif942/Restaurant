@@ -1,0 +1,62 @@
+/* Food Entry Page Style Sheet */
+
+#title
+{
+ font-size:50px;
+ color:red;
+}
+
+
+#infohead
+{
+ color:blue;
+ font-size:30px;
+}
+
+#infomain
+{
+ font-size:30px;
+ color:black;
+}
+
+input[type=text],select
+{
+ width: 100%;
+ padding: 5px;
+ border: 1px solid black;
+}
+
+textarea
+{
+ width: 200%; 
+ padding: 15px; 
+ border: 1px solid black; 
+ border-radius: 4px; 
+ box-sizing: border-box;
+ size:20px;
+ margin-top: 6px; 
+ margin-bottom: 16px;
+ resize: vertical;
+}
+
+body
+{
+ background: url(../images/foodentry.jpg);
+ background-repeat: no-repeat;
+ background-size: cover;
+}
+
+table
+{
+ border:0;
+ border-spacing:20px 30px;
+}
+
+.button
+{
+  font-size: 16px;
+  background-color:black;
+  color:white;
+  cursor: pointer;
+  padding: 5px 10px;
+}

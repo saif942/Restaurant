@@ -1,0 +1,93 @@
+CREATE  TABLE  student(
+college_id  VARCHAR(12)  PRIMARY KEY ,
+roll_no     NUMBER(10)      UNIQUE,
+course      VARCHAR(10)  NOT NULL,
+gender      CHAR(1)      NOT NULL,
+s_category  VARCHAR(10)  NOT NULL,
+dob         DATE,
+nationality VARCHAR(10),
+dep_id      VARCHAR(8),
+CHECK(college_id LIKE 'A%'));
+ 
+
+
+ CREATE  TABLE  student_name(
+college_id   varchar(12)  REFERENCES  student,
+name         varchar(20)  NOT  NULL);
+ 
+
+
+
+ CREATE TABLE parents_details(
+college_id         varchar(12)  REFERENCES student,
+father_name        varchar(20),
+f_phone_no         varchar(10)  NOT NULL,
+father_occupation  varchar(20),
+mother_name        varchar(25),
+m_phone_no         varchar(10),
+mother_occupation  varchar(20),
+parent_income      number(10));
+ 
+
+
+
+CREATE  TABLE  academic_qualifications(
+college_id       varchar(12)  REFERENCES  student,
+board_university varchar(8)  NOT NULL,
+yop              varchar(4),
+college          varchar(30)  NOT NULL,
+roll_no          number(10)  ,
+percentage       char(2)  NOT NULL);
+ 
+
+
+ CREATE TABLE  contact_details(
+college_id              varchar(12) REFERENCES student,
+mobile_no               varchar(10),
+email_id                varchar(320)  NOT NULL,
+correspondence_address  varchar(100),
+permanent_address       varchar(100)  NOT NULL);
+
+
+INSERT INTO student VALUES ('A2017CSE4993',1714310002,'B.TECH','M','GENERAL',TO_DATE('15/08/1999', 'DD/MM/YYYY'),'INDIAN','B001');
+INSERT INTO student VALUES ('A2017CSE5036',1714310090,'B.Tech.','M','GENERAL',TO_DATE('15/01/1999', 'DD/MM/YYYY'),'INDIAN','B001');
+INSERT INTO student VALUES ('A2017CSE5060',1714310105,'B.Tech.','M','GENERAL',TO_DATE('15/02/1999', 'DD/MM/YYYY'),'INDIAN','B001');
+INSERT INTO student VALUES ('A2017CSE4957',1714310098,'B.Tech.','M','GENERAL',TO_DATE('15/03/1999', 'DD/MM/YYYY'),'INDIAN','B001');
+INSERT INTO student VALUES ('A2017CSE5053',1714310080,'B.Tech.','M','GENERAL',TO_DATE('15/04/1999', 'DD/MM/YYYY'),'INDIAN','B001');
+
+
+
+INSERT INTO student_name VALUES('A2017CSE4993','AAKASH');
+INSERT INTO student_name VALUES('A2017CSE5036','KARAN');
+INSERT INTO student_name VALUES('A2017CSE5060','SAIF');
+INSERT INTO student_name VALUES('A2017CSE4957','LAKSHAY');
+INSERT INTO student_name VALUES('A2017CSE5053','IMTIYAZ');
+
+
+
+INSERT  INTO  parents_details  VALUES 
+ ('A2017CSE4993', 'Louis','7869861062' ,'CEO','Hannah' , NULL, 'Housewife' , 30000 ); 
+INSERT  INTO  parents_details  VALUES
+ ('A2017CSE5036', 'Josiah', '6869861062','CFO','Niamh' , NULL, 'Housewife' , 70000 );
+INSERT  INTO  parents_details  VALUES  
+('A2017CSE5060','Eddie' ,'9869861062','Lawyer','Warren', NULL, 'Housewife',50000);
+INSERT  INTO  parents_details  VALUES  
+('A2017CSE4957', 'Robin','8869861061','Doctor','Elijah' , NULL, 'Housewife' , 40000 );
+INSERT  INTO  parents_details  VALUES  
+('A2017CSE5053', 'Sonny' ,'8869861062','Teacher', 'Alia', NULL, 'Housewife' , 10000);
+
+
+
+INSERT  INTO  academic_qualifications  VALUES ( 'A2017CSE4993','AKTU', '2021' , 'IMS', 1714310002 , '88' );
+INSERT  INTO  academic_qualifications  VALUES ( 'A2017CSE5036','AKTU', '2021' , 'IMS', 1714310090 , '80' );
+INSERT  INTO  academic_qualifications  VALUES ( 'A2017CSE4957','AKTU', '2021' , 'IMS', 1714310098 , '70' );
+INSERT  INTO  academic_qualifications  VALUES ( 'A2017CSE5060','AKTU', '2021' , 'IMS', 1714310105 , '87' );
+INSERT  INTO  academic_qualifications  VALUES ( 'A2017CSE5053','AKTU', '2021' , 'IMS', 1714310080 , '76' );
+
+
+INSERT  INTO  contact_details  VALUES  ('A2017CSE4993' , '7301961664' , 'aakash@gmail.com'  , NULL , 'Aravali Hostel' );
+INSERT  INTO  contact_details  VALUES  ('A2017CSE5036', '0428741738' , 'karan@gmail.com', NULL , 'Nilgiri Hostel' );
+INSERT  INTO  contact_details  VALUES  ('A2017CSE4957', '8037116627' , 'lakshay@gmail.com'  , NULL , 'Govindpuram' );
+INSERT  INTO  contact_details  VALUES  ('A2017CSE5060', '7411204189' , 'saif@gmail.com'  , NULL , 'Govindpuram' );
+INSERT  INTO  contact_details  VALUES  ('A2017CSE5053', '5183181671' , 'imtiyaz@gmail.com'  , NULL , 'Govindpuram' );
+

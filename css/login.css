@@ -1,0 +1,49 @@
+/* Login Page Style Sheet */
+
+#title
+{
+ font-size:60px;
+ color:red;
+}
+
+table
+{
+ border:0;
+ border-spacing:30px 20px;
+}
+
+#infomain
+{
+ font-size:30px;
+ color:black;
+}
+
+#infomain2
+{
+ font-size:20px;
+ color:black;
+}
+
+body
+{
+ background: url(../images/login.jpg);
+ background-repeat: no-repeat;
+ background-size: cover;
+}
+
+.button
+{
+  font-size: 16px;
+  background-color:black;
+  color:white;
+  cursor: pointer;
+  padding: 5px 10px;
+  height:30px;
+  width:80px
+}
+
+a 
+{
+ font-size:20px;
+ color: blue;
+}
